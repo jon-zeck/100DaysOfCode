@@ -25,10 +25,6 @@ class GameLogic():
         self.timer = 0
         self.seconds_tracker = 0
 
-    # def start_game(self):
-    #     self.overlay.interrupt_pause()
-    #     self.run_game()
-
     def restart_game(self): 
         self.overlay.interrupt_pause()
         self.restart = True
@@ -38,7 +34,6 @@ class GameLogic():
         self.running = False
 
     def setup_keypresses(self):
-        # self.screen.onkeypress(self.start_game, "space")
         self.screen.onkeypress(self.restart_game, "r")
         self.screen.onkeypress(self.quit, "q")
 
@@ -176,9 +171,9 @@ class Multiplayer(GameLogic):
                 for food in self.foods:
                     if food.distance(self.snakes[i].head) < 15:
                         food.reset()
+                        self.foods.remove(food)
                         self.snakes[i].append_segment()
                         self.scores[i].update_scoreboard()
-                self.snakes[i].move_snake()
 
                 # CHECK WALL COLLISION
                 x_pos, y_pos = self.snakes[i].head.pos()
@@ -211,6 +206,9 @@ class Multiplayer(GameLogic):
                     self.dead[i] = False
                     self.invulnerability[i] = True
                     self.invulnerability_counter[i] = 0
+                else:
+                    # move the snake
+                    self.snakes[i].move_snake()
 
 
     def run_game(self):

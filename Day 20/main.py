@@ -45,10 +45,6 @@ class Start():
         else:
             game = Singleplayer(self.screen, self.overlay)
         game.run_game()
-        # self.snakes[0].create_snake()
-
-        # ... IDEA: Multiple spawning food items... every 5 seconds or so.
-        # ... Timer
 
 if __name__ == "__main__":
     screen = Screen()

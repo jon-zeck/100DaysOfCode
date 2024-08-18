@@ -11,7 +11,7 @@ DOWN = 270
 
 # SNAKE SETTINGS
 SNAKE_LENGTH = 5
-SNAKE_SPEED = .1
+SNAKE_SPEED = .02
 
 class Snake():
     def __init__(self, colour, location) -> None:
