@@ -36,12 +36,8 @@ class Food(Turtle):
     def round_base_20(self, x):
         return SQUARE_SIZE * round(x / SQUARE_SIZE)
     
-    def reset(self, screen_size):
+    def reset(self):
         super().reset()
-        self.shape("square")
-        self.color(FOOD_COLOUR)
-        self.penup()
-        self.shapesize(FOOD_SHAPE_MULTIPLIER, FOOD_SHAPE_MULTIPLIER)
-        self.speed("fastest")
-        self.screen_size = int(screen_size / 2)
-        self.spawn_food()
+        self.hideturtle()
+    
+    

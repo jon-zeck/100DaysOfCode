@@ -1,4 +1,5 @@
 from turtle import Turtle
+import math
 
 ALIGNMENT = "center"
 SCORE_FONT = ("Arial", 12, "bold")
@@ -50,3 +51,8 @@ class Score(Text):
     def reset(self):
         self.score = 0
         self.write_score()
+
+    def half_score(self):
+        self.score = math.floor(self.score / 2)
+        self.write_score()
+    
