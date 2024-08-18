@@ -1,4 +1,5 @@
 from turtle import Turtle
+from globals import FOOD_COLOUR, FOOD_SHAPE_MULTIPLIER, MARGIN, SQUARE_SIZE
 import random
 
 '''
@@ -9,11 +10,6 @@ Food Class:
     - Methods:
         - new_location()
 '''
-
-FOOD_SHAPE_MULTIPLIER = 0.5
-MARGIN = 10
-SQUARE_SIZE = 20
-FOOD_COLOUR = "#ffff00"
 
 class Food(Turtle):
     def __init__(self, screen_size) -> None:

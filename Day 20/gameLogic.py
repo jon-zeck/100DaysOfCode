@@ -1,18 +1,8 @@
 from food import Food
 from snake import Snake
 from score import Score
+from globals import SINGLEPLAYER_SCORE_LOCATION, SINGLEPLAYER_SNAKE_COLOUR, SINGLEPLAYER_SNAKE_LOCATION, SNAKE_COLOURS, SNAKE_LOCATIONS, SCORE_LOCATIONS, TIME_LOCATION, MAX_TIME, FOOD_SPAWNRATE
 import time
-
-# SNAKE SETTINGS
-SNAKE_COLOURS = ["white", "black"]
-SNAKE_LOCATIONS = [{"x": -280, "y": 200}, {"x": -280, "y": -200}]
-
-# SCORE SETTINGS
-SCORE_LOCATIONS = [{"x": -240, "y": 280}, {"x": 240, "y": 280}]
-
-# TIME SETTINGS
-MAX_TIME = 300     # 5 minutes
-TIME_LOCATION = {"x": 0, "y": 280}
 
 class GameLogic():
     def __init__(self, screen, overlay):
@@ -51,13 +41,6 @@ class GameLogic():
             if head.distance(segment) < 15:
                 collision = True
         return collision
-
-
-
-# SINGLE PLAYER SETTINGS
-SINGLEPLAYER_SNAKE_COLOUR = "black"
-SINGLEPLAYER_SNAKE_LOCATION = {"x": -280, "y": 0}
-SINGLEPLAYER_SCORE_LOCATION = {"x": 0, "y": 280}
 
 
 class Singleplayer(GameLogic):
@@ -109,9 +92,6 @@ class Singleplayer(GameLogic):
             if self.restart:
                 self.reset_game_state()
                 self.restart = False
-
-
-FOOD_SPAWNRATE = 50
 
 class Multiplayer(GameLogic):
     def __init__(self, screen, overlay):

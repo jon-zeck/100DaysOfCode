@@ -1,17 +1,7 @@
 from turtle import Turtle
 import time
 from score import Score
-
-SHAPESIZE = 1
-MOVE_DISTANCE = 20
-RIGHT = 0
-UP = 90
-LEFT = 180
-DOWN = 270
-
-# SNAKE SETTINGS
-SNAKE_LENGTH = 5
-SNAKE_SPEED = .02
+from globals import SNAKE_LENGTH, SNAKE_SPEED, SHAPESIZE, MOVE_DISTANCE, DOWN, RIGHT, LEFT, UP
 
 class Snake():
     def __init__(self, colour, location) -> None:

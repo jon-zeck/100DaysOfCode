@@ -1,12 +1,6 @@
 from turtle import Turtle
 import math
-
-ALIGNMENT = "center"
-SCORE_FONT = ("Arial", 12, "bold")
-SET_MOVE_FALSE = False
-GAME_OVER_FONT = ("Arial", 15, "bold")
-SCORE_POS = {"x":0, "y": 275}
-
+from globals import SET_MOVE_FALSE, ALIGNMENT, GAME_OVER_FONT, SCORE_FONT
 
 class Text(Turtle):
     def __init__(self, text="", location={"x":0, "y":0}):

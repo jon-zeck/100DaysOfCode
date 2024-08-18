@@ -1,13 +1,7 @@
 from gameLogic import GameLogic, Singleplayer, Multiplayer
 from turtle import Screen
 from overlay import Overlay
-
-
-# SCREEN SETTINGS
-BG_COLOUR = "orange"
-GAME_SCREEN = 600
-GAME_TITLE = "Snake Game"
-TRACER_OFF = 0
+from globals import GAME_SCREEN, GAME_TITLE, BG_COLOUR, TRACER_OFF
 
 class Start():
     def __init__(self):
@@ -57,9 +51,6 @@ if __name__ == "__main__":
     start = Start()
 
     start.start()
-    
-    # game = GameLogic(screen)
-    # game.start()
 
 
 '''
