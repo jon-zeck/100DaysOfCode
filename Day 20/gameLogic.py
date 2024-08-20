@@ -35,9 +35,7 @@ class GameLogic():
 
     def body_collision_detection(self, snake, head):
         collision = False
-        for segment in snake:
-            if segment == head:
-                continue
+        for segment in snake[1:]:
             if head.distance(segment) < 15:
                 collision = True
         return collision
