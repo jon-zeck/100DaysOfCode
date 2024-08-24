@@ -4,7 +4,7 @@ from globals import SET_MOVE_FALSE, ALIGNMENT, SCORE_FONT
 class Score(Turtle):
     def __init__(self, location):
         super().__init__()
-        self.score = 5
+        self.score = 0
         self.hideturtle()
         self.penup()
         self.speed("fastest")

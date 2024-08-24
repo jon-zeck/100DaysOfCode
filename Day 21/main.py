@@ -1,7 +1,7 @@
 ''' Day 21: Pong Game '''
 
-from turtle import Screen
-from globals import SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BG_COLOUR
+from turtle import Screen, Turtle
+from globals import SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BG_COLOUR, PADDLE_LOCATIONS_X_AXIS
 from game import Game
 
 if __name__ == '__main__':
@@ -18,6 +18,43 @@ if __name__ == '__main__':
     screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT, startx=None, starty=None)
     screen.bgcolor(SCREEN_BG_COLOUR)
     screen.title("Pong")
+
+    # DEBUG DRAW BOUNDARY LINES
+    turtle1 = Turtle()
+    turtle1.hideturtle()
+    turtle1.speed("fastest")
+    turtle1.color("orange")
+    turtle1.penup()
+    turtle1.setpos(PADDLE_LOCATIONS_X_AXIS[0] + 10, -300)
+    turtle1.pendown()
+    turtle1.setpos(PADDLE_LOCATIONS_X_AXIS[0] + 10, 300)
+
+    turtle2 = Turtle()
+    turtle2.hideturtle()
+    turtle2.speed("fastest")
+    turtle2.color("red")
+    turtle2.penup()
+    turtle2.setpos(PADDLE_LOCATIONS_X_AXIS[0], -300)
+    turtle2.pendown()
+    turtle2.setpos(PADDLE_LOCATIONS_X_AXIS[0], 300)
+
+    turtle3 = Turtle()
+    turtle3.hideturtle()
+    turtle3.speed("fastest")
+    turtle3.color("orange")
+    turtle3.penup()
+    turtle3.setpos(PADDLE_LOCATIONS_X_AXIS[1] - 10, -300)
+    turtle3.pendown()
+    turtle3.setpos(PADDLE_LOCATIONS_X_AXIS[1] - 10, 300)
+
+    turtle4 = Turtle()
+    turtle4.hideturtle()
+    turtle4.speed("fastest")
+    turtle4.color("red")
+    turtle4.penup()
+    turtle4.setpos(PADDLE_LOCATIONS_X_AXIS[1], -300)
+    turtle4.pendown()
+    turtle4.setpos(PADDLE_LOCATIONS_X_AXIS[1], 300)
 
     screen.delay(0)
 

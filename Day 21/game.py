@@ -25,8 +25,8 @@ class Game():
     def hit_ball(self):
         x_cor = self.ball.xcor()
         return (
-            (x_cor < PADDLE_LOCATIONS_X_AXIS[0] + 10 and self.ball.distance(self.player_one) <= 30) or 
-            (x_cor > PADDLE_LOCATIONS_X_AXIS[1] - 10 and self.ball.distance(self.player_two) <= 30)
+            (x_cor < PADDLE_LOCATIONS_X_AXIS[0] + 10 and x_cor > PADDLE_LOCATIONS_X_AXIS[0] and self.ball.distance(self.player_one) <= 50) or 
+            (x_cor > PADDLE_LOCATIONS_X_AXIS[1] - 10 and x_cor < PADDLE_LOCATIONS_X_AXIS[1] and self.ball.distance(self.player_two) <= 50)
             )
 
     def reset_game(self):
@@ -46,7 +46,7 @@ class Game():
                 # Detect miss for player one (player two scores)
                 if x_pos <= -half_screen_width:
                     self.player_two.increase_score()
-                    if self.player_two.get_score() >= 7 and self.player_two.get_score() - self.player_two.get_score() >= 2:
+                    if self.player_two.get_score() >= 7 and self.player_two.get_score() - self.player_one.get_score() >= 2:
                         # self.player_two.set_winner()
                         self.playing = False
                     self.game = False
@@ -71,9 +71,10 @@ class Game():
                 # move the ball
                 self.ball.move()
                 self.screen.update()
-                speed = min(self.speed, MAX_SPEED)
+                speed = max(self.speed, MAX_SPEED)
                 sleep(speed)
             
-            self.reset_game()
+            if self.playing:
+                self.reset_game()
         
         input("GAME OVER, SOMEBODY WON")
