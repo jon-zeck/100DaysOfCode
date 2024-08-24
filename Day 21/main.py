@@ -1,8 +1,7 @@
 ''' Day 21: Pong Game '''
 
 from turtle import Screen
-from globals import SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BG_COLOUR, PADDLE_LOCATIONS_X_AXIS
-from line import MiddleLine
+from globals import SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BG_COLOUR
 from game import Game
 
 if __name__ == '__main__':
@@ -14,10 +13,11 @@ if __name__ == '__main__':
     # 5. Detect collision with wall and bounce
     # 6. Detect collision with paddle
     # 7. Detect a miss
-    # 8. Keep score
+    # 8. Keep 
     screen = Screen()
     screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT, startx=None, starty=None)
     screen.bgcolor(SCREEN_BG_COLOUR)
+    screen.title("Pong")
 
     screen.delay(0)
 
@@ -25,8 +25,7 @@ if __name__ == '__main__':
 
     screen.listen()
 
-    while True:
-        screen.update()
+    game.play()
 
 '''
 What the game needs:
