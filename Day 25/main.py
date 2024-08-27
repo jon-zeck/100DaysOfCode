@@ -35,6 +35,8 @@ if __name__ == '__main__':
     number_of_states = 50
     while states_list:
         answer_state = screen.textinput(f"You have {number_of_states - len(states_list)}/{number_of_states} correct", "Name another state:")
+        if answer_state.lower() == "exit" or answer_state.lower() == "quit":
+            break
         state_info = states_data[states_data.state == answer_state]
         if state_info.empty:
             continue
@@ -42,3 +44,5 @@ if __name__ == '__main__':
             continue
         Country(state_info)
         states_list.remove(answer_state)
+    
+    input(f"End of game. You got {number_of_states - len(states_list)}/{number_of_states} correct")
